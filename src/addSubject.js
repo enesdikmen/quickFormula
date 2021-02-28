@@ -5,8 +5,8 @@ var formulas = [];
 
 document.getElementById("addFormulaButton").addEventListener("click", tools.openModal)
 
-ipcRenderer.on('new-formula', (event, exp, vars) =>{
-    let formula = tools.addFormula(exp, vars);
+ipcRenderer.on('new-formula', (event, exp, vars, formulaName) =>{
+    let formula = tools.addFormula(exp, vars, formulaName);
     formulas.push(formula)
 })
 

@@ -64,6 +64,11 @@ function loadFormulas(subj){
         //loads each formula
         subj.formulas.forEach((formula, index)=>{
             
+            let name = document.createElement("p");
+            name.innerHTML = formula.name;
+            name.style = "color: grey;"
+            name.classList = "pb-3"
+
             let formulaElement = document.createElement("div");
             formulaElement.classList = "mb-2"
             
@@ -124,6 +129,7 @@ function loadFormulas(subj){
             formulaElement.appendChild(p);
             formulaElement.appendChild(div)
 
+            fullFormula.appendChild(name);
             fullFormula.appendChild(formulaElement);
             fullFormula.appendChild(resultSection);
 

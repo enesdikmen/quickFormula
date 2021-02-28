@@ -20,8 +20,9 @@ function validateSubjName(subjName){
     return true
 }
 
-function makeFormula(exp, vars){
+function makeFormula(exp, vars, formulaName){
     var formula = {}
+    formula.name = formulaName
     formula.expression = exp
     formula.variables = vars
 
@@ -35,7 +36,7 @@ module.exports = {
         let win = new remote.BrowserWindow({
             parent: remote.getCurrentWindow(),
             modal: true,
-            width: 400,
+            width: 700,
             height: 400,
             frame: true, //later maybe chage this   
             webPreferences: {
@@ -43,7 +44,7 @@ module.exports = {
                 enableRemoteModule: true
               } 
         })
-        //win.webContents.openDevTools()
+        win.webContents.openDevTools()
         win.loadFile('src/addFormula.html');
     },
 
@@ -62,8 +63,8 @@ module.exports = {
             alert("Invalid subject name!\n(Name can not be empty or same with an existing subject)")
         }
     },
-    addFormula: function(exp, vars){
-        let formula = makeFormula(exp, vars)
+    addFormula: function(exp, vars, formulaName){
+        let formula = makeFormula(exp, vars, formulaName)
 
         displayFormula(exp)
         return formula

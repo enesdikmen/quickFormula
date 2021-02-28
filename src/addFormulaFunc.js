@@ -20,6 +20,14 @@ function validateVars(vars){
     return true;
 }
 
+function validateFormulaName(name){
+    if(name === ""){
+        return false;
+    }
+    return true;
+}
+
+
 function getScope(varNames){
     let scope = {};
     for(i=0; i<varNames.length; i++){
@@ -76,6 +84,11 @@ module.exports = {
     addFormula: function(){
     
 
+        let formulaName = document.getElementById("newFormulaNameInput").value
+        if(!validateFormulaName(formulaName)){
+            alert("Invalid formula name!")
+            return;
+        }
         let vars = getVars()
         if(!validateVars(vars)){
             alert("Invalid variable names!")
@@ -94,7 +107,7 @@ module.exports = {
              
         //sending expression and vars to parent window
         let parentid = remote.getCurrentWindow().getParentWindow().webContents.id
-        ipcRenderer.sendTo(parentid, 'new-formula', expression, vars)
+        ipcRenderer.sendTo(parentid, 'new-formula', expression, vars, formulaName)
         remote.getCurrentWindow().close()
     }
 

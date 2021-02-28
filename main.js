@@ -7,7 +7,7 @@ let win;
 
 function createWindow() {
   win = new BrowserWindow({
-    width: 500,
+    width: 900,
     height: 600, 
     resizable: false,
     webPreferences: {
@@ -17,7 +17,7 @@ function createWindow() {
   })
 
   //opens dev tools
-  //win.webContents.openDevTools()
+  win.webContents.openDevTools()
   
   //build menu from template
   const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
