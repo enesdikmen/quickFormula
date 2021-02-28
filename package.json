@@ -1,0 +1,26 @@
+{
+  "name": "quick-formula",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "keywords": [],
+  "author": "Enes Dikmen",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^11.2.3"
+  },
+  "dependencies": {
+    "mathjs": "^9.2.0"
+  },
+  "build": {
+    "appId": "quick.formula",
+    "mac": {
+      "category": "quick.formula"
+    }
+  }
+}

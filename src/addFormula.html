@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>StudyHelper</title>
+    <link rel="stylesheet" href="../styles/bulma.min.css">
+
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <script>
+    </script>
+</head>
+
+<body style="background: white;">
+    <div id="addFormulaSection" class="section">
+        <p>Add new formula</p>
+        <div id="addVariableSection">
+            <label class="label is-size-7">Number of Variables</label>
+            <div class="field">
+            <input type="number" min="1" value="0" style="width: 15%;" id="varNumInput" readonly>
+            <button id="incVarButton" class="button is-small is-success">+</button>
+            <button id="decVarButton" class="button is-small is-warning">-</button>
+            
+            </div>
+            <label class="label is-size-7">Variable Names:</label>
+            <div id="varsSection" class="block">
+
+            </div>
+
+        </div>
+        <label class="label is-size-7">Formula:</label>
+
+        <input type="text" class="input mb-2" id="newFormulaInput" placeholder="(3*x+y)/2">
+        <button class="button is-small is-info" id="saveFormulaButton">Save Formula</button>
+        <button class="button is-small is-danger" id="cancelFormulaButton">Cancel</button>
+    </div>
+
+
+</body>
+<script>
+    require('./addFormula.js')
+</script>
+
+
+</html>

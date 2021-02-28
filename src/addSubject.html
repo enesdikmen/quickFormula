@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>StudyHelper</title>
+    <link rel="stylesheet" href="../styles/bulma.min.css">
+
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <script>
+    </script>
+</head>
+
+<body style="background: white;">
+    <section class="section">
+        Add subject
+        <div class="block">
+            <div>
+                <label class="label">Subject Name </label>
+                <input type="text" class="input" id="newSubjName" placeholder="Your subject's name">
+                <div class="block" id="formulas">
+                    <p class="title is-6 mb-1">Formulas:</p>
+                </div>
+
+                <button class="button is-info" id="addFormulaButton">Add Formula</button>
+
+            </div>
+
+        </div>
+        <div class="block">
+            <button class="button is-success is-rounded" id="saveSubjectButton">Save Subject</button>
+            <a class="button is-rounded is-danger" href="index.html">Cancel</a>
+        </div>
+    </section>
+
+    <footer class="footer p-2 has-background-white">
+        <button class="button is-warning" id="backButton">Back</button>
+    </footer>
+</body>
+<script>
+    require('./addSubject.js')
+</script>
+
+
+</html>
